@@ -21,17 +21,19 @@ data = pandas.read_csv('GapMinder_mine.csv', low_memory=False)
 # convert variables to numeric format using convert_objects function
 data['lifeexpectancy'] = pandas.to_numeric(data['lifeexpectancy'], errors='coerce')
 data['urbanrate'] = pandas.to_numeric(data['urbanrate'], errors='coerce')
+data['co2emissions'] = pandas.to_numeric(data['co2emissions'], errors='coerce')
+
 
 
 
 ############################################################################################
 # This is how we would have centered Explanatory variables in case of multiple explanatory variables
 ############################################################################################
-mean_urban = data['urbanrate'].mean()
-data['urbanrate1'] = data['urbanrate']  - mean_urban
+mean_urban = data['co2emissions'].mean()
+data['urbanrate1'] = data['co2emissions']  - mean_urban
 
-print("Mean After Centering the Exp Variable :", data['urbanrate1'].mean())
-print("Mean Before Centering the Exp Variable :", data['urbanrate'].mean())
+print("Mean After Centering the Exp Variable :", data['co2emissions'].mean())
+print("Mean Before Centering the Exp Variable :", data['co2emissions'].mean())
 
 print ("==============================================================================")
 
