@@ -29,11 +29,11 @@ data['co2emissions'] = pandas.to_numeric(data['co2emissions'], errors='coerce')
 ############################################################################################
 # This is how we would have centered Explanatory variables in case of multiple explanatory variables
 ############################################################################################
-mean_urban = data['co2emissions'].mean()
-data['urbanrate1'] = data['co2emissions']  - mean_urban
+mean_c02 = data['co2emissions'].mean()
+data['co2emissions'] = data['co2emissions']  - mean_c02
 
 print("Mean After Centering the Exp Variable :", data['co2emissions'].mean())
-print("Mean Before Centering the Exp Variable :", data['co2emissions'].mean())
+print("Mean Before Centering the Exp Variable :", mean_c02)
 
 print ("==============================================================================")
 
