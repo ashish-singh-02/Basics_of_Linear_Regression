@@ -42,12 +42,12 @@ print (reg1.summary())
 
 #linear Regression (Life Expectancy and Urban Rate)
 reg2 = smf.ols('lifeexpectancy ~ urbanrate', data=data).fit()
-print (reg1.summary())
+print (reg2.summary())
 
 
 #Polynimial Regression
 reg3 = smf.ols('lifeexpectancy ~ urbanrate_c + I(urbanrate_c**2)', data=data).fit()
-print (reg2.summary())
+print (reg3.summary())
 
 #Scatter Plot between Life Expectancy and Urban Rate
 scat1 = seaborn.regplot(x="urbanrate", y="lifeexpectancy", scatter=True, order=2, data=data)
@@ -58,13 +58,11 @@ plt.ylabel('lifeexpectancy')
 
 #linear Regression (Life Expectancy and Income Per Person)
 reg4 = smf.ols('lifeexpectancy ~ incomeperperson', data=data).fit()
-print (reg2.summary())
+print (reg4.summary())
 
 #Polynimial Regression (Life Expectancy and Income Per Person)
 reg5 = smf.ols('lifeexpectancy ~ incomeperperson_c + I(incomeperperson_c**2)', data=data).fit()
-print (reg3.summary())
-
-
+print (reg5.summary())
 
 
 #scatterplot between Life Expectancy and Income Per Person
