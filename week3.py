@@ -40,8 +40,8 @@ data['incomeperperson_c']=(data['incomeperperson'] - data['incomeperperson'].mea
 reg1 = smf.ols('lifeexpectancy ~ urbanrate_c + co2emissions_c + incomeperperson_c + I(incomeperperson_c**2)', data=data).fit()
 print (reg1.summary())
 
-
-reg2 = smf.ols('lifeexpectancy ~ urbanrate_c', data=data).fit()
+#linear Regression (Life Expectancy and Urban Rate)
+reg2 = smf.ols('lifeexpectancy ~ urbanrate', data=data).fit()
 print (reg1.summary())
 
 
@@ -49,6 +49,7 @@ print (reg1.summary())
 reg3 = smf.ols('lifeexpectancy ~ urbanrate_c + I(urbanrate_c**2)', data=data).fit()
 print (reg2.summary())
 
+#Scatter Plot between Life Expectancy and Urban Rate
 scat1 = seaborn.regplot(x="urbanrate", y="lifeexpectancy", scatter=True, order=2, data=data)
 plt.xlabel('urbanrate ')
 plt.ylabel('lifeexpectancy')
